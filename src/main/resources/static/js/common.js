@@ -15,10 +15,10 @@ com = {
       return;
     }
     //selectType Check
-    selectType = com.isNull(selectType) ? '' || 'All';
+    selectType = com.isNull(selectType) ? '' : 'All';
 
     //ele Check
-    ele = com.isNull(ele) ? document || ele
+    ele = com.isNull(ele) ? document  : ele
     
     return ele['querySelector' + selectType](query);
   },
