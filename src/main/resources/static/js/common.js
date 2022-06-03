@@ -4,50 +4,23 @@ com = {
   /**
    * @name        : getDomFromID
    * @description : qeurySelector 활용 함수
-   * @paramtype   : obj {
-   *                      selectorType  : ''[d](단건 조회), All(전체 조회),
-   *                      ele           : document[d](문서전체), HTMLElement(조회할 Ele)
-   *                      searchType    : id[d], class, text,
-   *                      query         : serachText
-   *                    }
+   * @paramtype   : query(String), 
+   *                selectType(null, all), 
+   *                ele(null(document), HTMLElement)
    **/
-	searchDom : function(obj){
-    if(com.isNull(obj)){
-      console.error()
+	searchDom : function(query, selectType, ele){
+    // valid 체크
+    if(com.isNull(query)){  
+      console.error(com.getMessage('COM_ALT_0001', '쿼리가'))
       return;
     }
-    //useObj 구성
-    useObj ={
-      selectorType  : '',      
-      ele           : document, 
-      searchType    : 'id',       
-      query         : '',         
-    };
-    //useObj
-    if(!com.isNull(obj.selectorType)){
-      useObj.selectorType = obj.selectorType;
-    }
-    if(!com.isNull(obj.ele)){
-      useObj.ele = obj.ele;
-    }
-    if(!com.isNull(obj.searchType)){
-      useObj.searchType = obj.searchType;
-    }
-    if(!com.isNull(obj.query)){
-      useObj.query = obj.query;
-    }
-    //searchType구분 query생성
-    var query = '';
-    if(useObj.searchType == 'id'){
-      query = '#'+ useObj.query;
-    }else 
-    if(useObj.searchType == 'class'){
-      query = '.'+ useObj.query;
-    }else 
-    if(useObj.searchType == 'text'){
-      query = useObj.query;
-    }
-    return useObj.ele['querySelector' + useObj.selectorType](query);
+    //selectType Check
+    selectType = com.isNull(selectType) ? '' || 'All';
+
+    //ele Check
+    ele = com.isNull(ele) ? document || ele
+    
+    return ele['querySelector' + selectType](query);
   },
   /**
    * @NAME        : isNull
