@@ -33,6 +33,9 @@ com = {
     if(!com.isNull(obj.searchType)){
       useObj.searchType = obj.searchType;
     }
+    if(!com.isNull(obj.query)){
+      useObj.query = obj.query;
+    }
     //searchType구분 query생성
     var query = '';
     if(useObj.searchType == 'id'){
@@ -80,4 +83,5 @@ com = {
     }
     return msgCont;
   },
+
 }
