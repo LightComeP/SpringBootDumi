@@ -1,4 +1,5 @@
 var com = {};
+
 com = {
   /**
    * @name        : getDomFromID
@@ -10,7 +11,7 @@ com = {
    *                      query         : serachText
    *                    }
    **/
-	sarchDom : function(obj){
+	searchDom : function(obj){
     if(com.isNull(obj)){
       console.error()
       return;
@@ -55,8 +56,8 @@ com = {
   },
   /**
    *  @name 				: getMessage
-   		@description 	: 공통 msg 등록된 문구 가져오기
-   		@param 				: msgCode, 보간
+   *	@description 	: 공통 msg 등록된 문구 가져오기
+   *	@param 				: msgCode, 보간
    */
   getMessage : function(msgCode){
     if(com.isNull(msgCode)){
@@ -78,5 +79,5 @@ com = {
       }
     }
     return msgCont;
-  }
+  },
 }
