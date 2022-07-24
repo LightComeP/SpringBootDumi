@@ -8,14 +8,94 @@
 		<title>타이틀</title>
 		<meta name="description" content="웹페이지 소개">
 		<meta name="keywords" content="키워드입력, 키워드2, 키워드3">
+		<!-- css ---------------------- S -->
 		<script src='json/msg.js'></script>
 		<script src="js/common.js"></script>
+		<!-- css ---------------------- E -->
+		<!-- css ---------------------- S -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+		<!-- css ---------------------- E -->
 	</head>
 	<body>
-		
+		<div id='indexTopNav'>
+		</div>
+		<div id='indexTopNav'>
+		  <div id='indexTopLogo'> cafeWorld </div>
+		  <div id=contentsContainer>
+		    <div class='contents'>카페</div>
+		    <div class='contents'>이벤트</div>
+		  </div>
+		  <div id='topLogin'>로그인</div>
+		</div>
 	</body>
 	<script>
 		window.onload = function(){
+var nav_indexTopNav     = com.searchDom('#indexTopNav'); 
+  var contents = [ 
+    {
+      name    : 'div',
+      value   : 'cafeWorld',
+      id      : 'indexTopLogo',
+    },
+    {
+      name    : 'div',
+      value   : '',
+      id      : 'contentsContainer',
+      contents: [
+        {
+          name  : 'div',
+          value : '카페',
+          id    : '',
+          class : 'contents'
+        },
+        {
+          name  : 'div',
+          value : '이벤트',
+          id    : '',
+          class : 'contents'
+        },
+      ]
+    },
+    {
+      name  : 'div',
+      value : '로그인',
+      id    : 'topLogin',
+      class : ''
+    },
+  ];
+
+
+test = {};
+test = {
+	  domGenerator : function(targetDom,contents){
+	    //공백시 취소
+	    if(com.isNull(contents)){
+	      return false;
+	    }
+	    // 재네레이터 가동
+	    for(domInfo of contents){ // 컨텐츠 목록 for
+	      var dom = '';
+	      for(key in domInfo){    // 돔 구성 for
+	        if(key == 'name'){
+	          if(com.isNull(domInfo[key])) return false;  // tagName이 널이라면 return;
+	          dom = document.createElement(domInfo[key]);
+	        }else if(key == 'value'){
+	          dom.innerText = domInfo[key];
+	        }else if(key == 'contents'){
+	          test.domGenerator(dom, domInfo[key]);
+	        }else{
+	          dom[key] = domInfo[key];
+	        }
+	      }
+	      targetDom.append(dom);
+	    }
+	  },
+	}
+	
+	
+	test.domGenerator(nav_indexTopNav, contents);
 		}
 	</script>
 </html>
