@@ -1,0 +1,56 @@
+
+body{
+  background: #C9D6FF;
+  background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);
+  background: linear-gradient(to right, #E2E2E2, #C9D6FF); 
+  margin : 0px;
+}
+#indexTopNav{
+  width : 100vw;
+  height : 50px;
+  background-color : #97a3c8;
+  position : relative;
+  display : flex;
+  align-items : center;
+}
+
+#indexTopNav *{
+  padding : 5px;
+  font-weight : bold;
+  color : white;
+  
+  
+}
+#indexTopNav *:hover{
+  color : gray;
+  
+}
+#indexTopNav #indexTopLogo{
+  width : 10vw;
+  cursor : pointer;
+  font-size : 30px;
+  font-family : 'Parisienne', serif;
+  font-weight : 200;
+  width : auto;
+  text-align : center;
+}
+#indexTopNav #contentsContainer{
+<<<<<<< HEAD
+  width : 80vw;
+=======
+  width : 80vw; 
+>>>>>>> eb49e06d777702a7897e7d0e9911622a6ba8e056
+  display : flex;
+  .contents{
+    cursor : pointer;
+  }
+<<<<<<< HEAD
+}
+=======
+} 
+>>>>>>> eb49e06d777702a7897e7d0e9911622a6ba8e056
+
+#indexTopNav #topLogin{
+  width : 10vw;
+  cursor : pointer;
+}
