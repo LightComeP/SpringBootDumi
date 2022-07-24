@@ -8,14 +8,57 @@
 		<title>타이틀</title>
 		<meta name="description" content="웹페이지 소개">
 		<meta name="keywords" content="키워드입력, 키워드2, 키워드3">
+		<!-- css ---------------------- S -->
 		<script src='json/msg.js'></script>
 		<script src="js/common.js"></script>
+		<!-- css ---------------------- E -->
+		<!-- css ---------------------- S -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+		<!-- css ---------------------- E -->
 	</head>
 	<body>
-		
+		<div id='indexTopNav'>
 	</body>
 	<script>
 		window.onload = function(){
+			debugger;
+			var nav_indexTopNav     = com.searchDom('#indexTopNav'); 
+			var contents = 
+			[ 
+				{
+					name    : 'div',
+					value   : 'cafeWorld',
+					id      : 'indexTopLogo',
+				},
+				{
+					name    : 'div',
+					value   : '',
+					id      : 'contentsContainer',
+					contents: [
+						{
+							name  : 'div',
+							value : '카페',
+							id    : '',
+							class : ['contents']
+						},
+						{
+							name  : 'div',
+							value : '이벤트',
+							id    : '',
+							class : ['contents']
+						},
+					]
+				},
+				{
+					name  : 'div',
+					value : '로그인',
+					id    : 'topLogin',
+					class : ''
+				},
+			];
+			com.domGenerator(nav_indexTopNav, contents);
 		}
 	</script>
 </html>
