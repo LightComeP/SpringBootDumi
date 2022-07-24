@@ -11,16 +11,25 @@
 		<!-- css ---------------------- S -->
 		<script src='json/msg.js'></script>
 		<script src="js/common.js"></script>
+<<<<<<< HEAD
 		<!-- css ---------------------- E -->
 		<!-- css ---------------------- S -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
 		<!-- css ---------------------- E -->
+=======
+		<!-- 로고 폰트 S -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+		<!-- 로고 폰트 E -->
+>>>>>>> eb49e06d777702a7897e7d0e9911622a6ba8e056
 	</head>
 	<body>
 		<div id='indexTopNav'>
 		</div>
+<<<<<<< HEAD
 		<div id='indexTopNav'>
 		  <div id='indexTopLogo'> cafeWorld </div>
 		  <div id=contentsContainer>
@@ -96,6 +105,47 @@ test = {
 	
 	
 	test.domGenerator(nav_indexTopNav, contents);
+=======
+	</body>
+	<script>
+		window.onload = function(){
+			debugger;
+			var nav_indexTopNav     = com.searchDom('#indexTopNav'); 
+			var contents = 
+			[ 
+				{
+					name    : 'div',
+					value   : 'cafeWorld',
+					id      : 'indexTopLogo',
+				},
+				{
+					name    : 'div',
+					value   : '',
+					id      : 'contentsContainer',
+					contents: [
+						{
+							name  : 'div',
+							value : '카페',
+							id    : '',
+							class : ['contents']
+						},
+						{
+							name  : 'div',
+							value : '이벤트',
+							id    : '',
+							class : ['contents']
+						},
+					]
+				},
+				{
+					name  : 'div',
+					value : '로그인',
+					id    : 'topLogin',
+					class : ''
+				},
+			];
+			com.domGenerator(nav_indexTopNav, contents);
+>>>>>>> eb49e06d777702a7897e7d0e9911622a6ba8e056
 		}
 	</script>
 </html>
